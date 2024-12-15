@@ -989,6 +989,9 @@ label {
 /*====================
 12. Navbar css
 ======================*/
+.nav-wrapper {
+  height:90px
+}
 
 .navbar {
   background: transparent;
