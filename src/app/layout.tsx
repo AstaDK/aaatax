@@ -1,12 +1,6 @@
-import type { Metadata, ResolvingMetadata } from 'next';
-import { Sora } from 'next/font/google';
-
-import './globals.css';
-
-const sora = Sora({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-  subsets: ['latin'],
-});
+import { sora } from "@/lib/fonts";
+import type { Metadata } from "next";
+import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -38,7 +32,6 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
-
 
 export default function RootLayout({
   children,

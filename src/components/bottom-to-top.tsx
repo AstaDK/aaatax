@@ -1,5 +1,7 @@
 'use client';
 import useSticky from '@/hooks/use-sticky';
+import { cn } from '@/lib/utils';
+import { ArrowUp } from 'lucide-react';
 import React from 'react';
 
 export default function BottomToTop() {
@@ -7,7 +9,6 @@ export default function BottomToTop() {
 
   const isSticky = useSticky(100);
 
-  // bottom to top handler
   const bottomTopHandler = React.useCallback(() => {
     window.scrollTo({
       top: 0,
@@ -15,7 +16,6 @@ export default function BottomToTop() {
     });
   }, []);
 
-  // progress path
   React.useEffect(() => {
     if (typeof window !== 'undefined') {
       const progressPath = progressPathRef.current;
@@ -41,24 +41,19 @@ export default function BottomToTop() {
   }, []);
 
   return (
-    <>
-      <div onClick={bottomTopHandler}>
-        <div
-          className={`fixed right-[30px] bottom-[30px] h-[50px] w-[50px] cursor-pointer block rounded-full shadow-inner border-[1px] border-black/10 z-[10000] ${isSticky ? 'opacity-100 visible transform translate-y-0' : 'invisible opacity-0 translate-y-[15px] transition-all duration-200 ease-linear'}`}
-        >
-          <svg
-            className="stroke-accent-color stroke-[4] box-border transition-all duration-200 ease-linear fill-none"
-            width="100%"
-            height="100%"
-            viewBox="-1 -1 102 102"
-          >
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" ref={progressPathRef} />
-          </svg>
-          <div className="top-[54%] left-1/2 absolute leading-[1px] transform -translate-x-1/2 -translate-y-1/2">
-            <i className="text-[36px] text-accent-color ri-arrow-up-s-line" />
-          </div>
+    <div onClick={bottomTopHandler}>
+      <div
+        className={cn(
+          "fixed right-7.5 bottom-7.5 h-12 w-12 cursor-pointer rounded-full shadow-inner border border-white z-50",
+          isSticky
+            ? "opacity-100 visible transform translate-y-0"
+            : "invisible opacity-0 translate-y-3.75 transition-all duration-200 ease-linear"
+        )}
+      >
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <ArrowUp className="text-9 text-white" />
         </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -1,11 +1,11 @@
 import BottomToTop from "@/components/bottom-to-top";
-import Header from "@/components/header";
 import Hero from "@/components/hero";
+import Navbar from "@/components/navbar";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Navbar />
       <BottomToTop />
       <Hero />
     </>

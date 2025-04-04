@@ -1,7 +1,7 @@
 'use client';
-import React, { useRef } from 'react';
-import { ForwardRefComponent, motion, useInView, Variant } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { motion, Variant } from 'framer-motion';
+import React from 'react';
 type Direction = 'up' | 'down' | 'left' | 'right';
 
 const containerVariants = {
@@ -33,7 +33,6 @@ const generateVariants = (direction: Direction): { hidden: Variant; visible: Var
 const defaultViewport = { amount: 0.3, margin: '0px 0px 0px 0px' };
 
 const TextScrollAnimation = ({
-  as = 'h1',
   text,
   wrapperClass = '',
   viewport = defaultViewport,
@@ -44,7 +43,7 @@ const TextScrollAnimation = ({
 }: {
   text: string;
   wrapperClass?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
   viewport?: {
     amount?: number;
     margin?: string;
@@ -92,7 +91,7 @@ const TextScrollAnimation = ({
                 >
                   {letterAnime ? (
                     <>
-                      {word.split('').map((letter: string, index: number) => (
+                      {word.split('').map((letter: string) => (
                         <>
                           <motion.span className={`inline-block `} variants={modifiedVariants}>
                             {letter}

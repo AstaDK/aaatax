@@ -2,10 +2,12 @@
 
 import { NAVIGATION } from '@/constants';
 import { cn } from '@/lib/utils';
+import { X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
+import { HoverButton } from './button/hover-button';
 
 export default function MobileSidebarNav({
   isOpen,
@@ -14,19 +16,21 @@ export default function MobileSidebarNav({
   isOpen: boolean;
   onClose: () => void;
 }) {
-  useEffect(() => {
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && isOpen) {
+  const handleEscapeKey = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "Escape" && isOpen) {
         onClose();
       }
-    };
+    },
+    [isOpen, onClose]
+  );
 
+  useEffect(() => {
     document.addEventListener('keydown', handleEscapeKey);
-
     return () => {
       document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isOpen, onClose]);
+  }, [handleEscapeKey]);
 
   return (
     <>
@@ -44,24 +48,9 @@ export default function MobileSidebarNav({
                   height={20}
                   width={60}
                   loading="lazy"
-                  src="/assets/images/logo/logosmallT.png"
-                  alt="Sur consulting logo"
+                  src="/assets/images/logo/logo.png"
+                  alt="AAA Tax Logo"
                 />
-                <div
-                  className="flex flex-col items-center"
-                  style={{
-                    background: "linear-gradient(to bottom, #007bff, #00ffff)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  <p className="text-[10px] font-medium text-nowrap">
-                    SUR CONSULTING
-                  </p>
-                  <p className="text-[3px] text-nowrap">
-                    WHERE SUCCESS IS STANDARD, EXCELLENCE IS EXPECTED
-                  </p>
-                </div>
               </Link>
             </div>
           </h5>
@@ -71,50 +60,59 @@ export default function MobileSidebarNav({
             onClick={onClose}
             aria-label="Close"
           >
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <X className="h-6 w-6" />
           </button>
         </div>
         <div className="p-4 overflow-y-auto h-full">
           <Sidebar className="!w-full !border-none">
             <Menu className="!bg-white">
               {NAVIGATION.map((item, i) =>
-                item.submenu ? (
-                  <SubMenu key={i} label={item.label}>
+                item.submenu && item.submenu.length > 0 ? (
+                  <SubMenu key={i} label={item.label} className="font-semibold">
                     {item.submenu.map((item2, i2) => (
-                      <MenuItem component={<Link href={item2.href} />} key={i2}>
+                      <MenuItem
+                        component={<Link href={item2.href} />}
+                        key={i2}
+                        className="px-4 py-2"
+                      >
                         <div onClick={onClose}>{item2.label}</div>
                       </MenuItem>
                     ))}
                   </SubMenu>
                 ) : (
-                  <MenuItem component={<Link href={item.href} />} key={i}>
+                  <MenuItem
+                    component={<Link href={item.href} />}
+                    key={i}
+                    className="font-semibold"
+                  >
                     <div onClick={onClose}>{item.label}</div>
                   </MenuItem>
                 )
               )}
             </Menu>
           </Sidebar>
+          <div className="flex flex-col gap-4 p-4">
+            <Link
+              href="/portal-login"
+              className="w-full inline-flex items-center justify-center px-4 py-3 text-sm font-medium bg-white border-2 rounded-md hover:bg-white hover:scale-105 transition-all duration-300"
+            >
+              Portal Login
+            </Link>
+            <HoverButton
+              customClass="w-full border-blue-600 text-white"
+              bgAnimation="bg-blue-600"
+              textColor="text-blue-600"
+              href="/about"
+            >
+              Talk to an Expert
+            </HoverButton>
+          </div>
         </div>
       </div>
 
       {/* Backdrop */}
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-opacity-50 z-40"
-          onClick={onClose}
-        ></div>
+        <div className="fixed inset-0 bg-black/50 z-40" onClick={onClose}></div>
       )}
     </>
   );
