@@ -17,17 +17,17 @@ const generateVariants = (direction: Direction): { hidden: Variant; visible: Var
   const value = direction === 'right' || direction === 'down' ? 100 : -100;
 
   return {
-    hidden: { filter: 'blur(10px)', opacity: 0, [axis]: value },
+    hidden: { filter: "blur(10px)", opacity: 0, [axis]: value },
     visible: {
-      filter: 'blur(0px)',
+      filter: "blur(0px)",
       opacity: 1,
       [axis]: 0,
       transition: {
         duration: 0.4,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     },
-  } as { hidden: Variant; visible: Variant }; // Directly cast to expected type
+  } as { hidden: Variant; visible: Variant };
 };
 
 const defaultViewport = { amount: 0.3, margin: '0px 0px 0px 0px' };
@@ -58,58 +58,48 @@ const TextScrollAnimation = ({
   lineAnime?: boolean;
 }) => {
   const baseVariants = variants || generateVariants(direction);
-  const modifiedVariants = {
-    hidden: baseVariants.hidden,
-    visible: {
-      ...baseVariants.visible,
-    },
-  };
+  const modifiedVariants = React.useMemo(
+    () => ({
+      hidden: baseVariants.hidden,
+      visible: {
+        ...baseVariants.visible,
+      },
+    }),
+    [baseVariants]
+  );
+
   return (
-    <>
-      <>
-        <motion.div
-          whileInView="visible"
-          initial="hidden"
-          variants={containerVariants}
-          viewport={viewport}
-          className={cn(`inline-block text-white`, wrapperClass)}
-        >
-          {lineAnime ? (
-            <>
-              {' '}
-              <motion.span className={`inline-block `} variants={modifiedVariants}>
-                {text}
-              </motion.span>
-            </>
-          ) : (
-            <>
-              {text.split(' ').map((word: string, index: number) => (
-                <motion.span
-                  key={index}
-                  className={`inline-block `}
-                  variants={letterAnime === false ? modifiedVariants : {}}
-                >
-                  {letterAnime ? (
-                    <>
-                      {word.split('').map((letter: string) => (
-                        <>
-                          <motion.span className={`inline-block `} variants={modifiedVariants}>
-                            {letter}
-                          </motion.span>
-                        </>
-                      ))}
-                      &nbsp;
-                    </>
-                  ) : (
-                    <>{word}&nbsp;</>
-                  )}
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      variants={containerVariants}
+      viewport={viewport}
+      className={cn("inline-block text-white", wrapperClass)}
+    >
+      {lineAnime ? (
+        <motion.span className="inline-block" variants={baseVariants}>
+          {text}
+        </motion.span>
+      ) : (
+        text.split(" ").map((word, index) => (
+          <motion.span
+            key={index}
+            className="inline-block"
+            variants={letterAnime ? undefined : baseVariants}
+          >
+            {letterAnime ? (
+              word.split("").map((letter) => (
+                <motion.span className="inline-block" variants={baseVariants}>
+                  {letter}
                 </motion.span>
-              ))}
-            </>
-          )}
-        </motion.div>
-      </>
-    </>
+              ))
+            ) : (
+              <>{word}&nbsp;</>
+            )}
+          </motion.span>
+        ))
+      )}
+    </motion.div>
   );
 };
 
