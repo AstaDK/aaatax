@@ -17,7 +17,7 @@ export default function Achievement() {
       clientX: number;
       clientY: number;
     }) => {
-      let { left, top } = currentTarget.getBoundingClientRect();
+      const { left, top } = currentTarget.getBoundingClientRect();
       const x = clientX - left;
       const y = clientY - top;
       setOverlayColor({ x, y });

@@ -58,15 +58,6 @@ const TextScrollAnimation = ({
   lineAnime?: boolean;
 }) => {
   const baseVariants = variants || generateVariants(direction);
-  const modifiedVariants = React.useMemo(
-    () => ({
-      hidden: baseVariants.hidden,
-      visible: {
-        ...baseVariants.visible,
-      },
-    }),
-    [baseVariants]
-  );
 
   return (
     <motion.div
@@ -88,8 +79,8 @@ const TextScrollAnimation = ({
             variants={letterAnime ? undefined : baseVariants}
           >
             {letterAnime ? (
-              word.split("").map((letter) => (
-                <motion.span className="inline-block" variants={baseVariants}>
+              word.split("").map((letter, letterIndex) => (
+                <motion.span key={letterIndex} className="inline-block" variants={baseVariants}>
                   {letter}
                 </motion.span>
               ))

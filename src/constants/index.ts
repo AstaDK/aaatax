@@ -139,7 +139,7 @@ export const ACHIEVEMENTS = [
     icon: Earth,
     number: 98,
     symbol: "%",
-    title: "Customer Satisfaction",
+    title: "Nationwide clients",
   },
   {
     icon: HandCoins,
