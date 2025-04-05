@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { LucideIcon } from "lucide-react";
+import { LucideIcon } from 'lucide-react';
 import { AnimatedComponent } from '@/components/animated-image';
 import Counter from '@/components/achievement/counter';
 
@@ -16,13 +16,13 @@ export default function AchievementCard({ data, index }: { data: Achievement; in
   return (
     <div
       className={cn(
-        "relative text-gray-400 flex-none basis-1/2 lg:basis-[160px] transition-opacity transform duration-400 ease",
-        "before:absolute before:top-1/2 before:h-24 before:w-0.5 before:bg-white before:transform before:-translate-y-1/2",
+        'relative text-gray-400 flex-none basis-1/2 lg:basis-[160px] transition-opacity transform duration-400 ease',
+        'before:absolute before:top-1/2 before:h-24 before:w-0.5 before:bg-white before:transform before:-translate-y-1/2',
         {
           'before:content-[""] before:right-0': isOdd,
           'before:content-none lg:before:content-[""]': !isOdd,
-          "lg:before:right-[-25%] xl:before:right-[-57%]": true,
-          "last:before:hidden": true,
+          'lg:before:right-[-25%] xl:before:right-[-57%]': true,
+          'last:before:hidden': true
         }
       )}
     >
@@ -34,9 +34,13 @@ export default function AchievementCard({ data, index }: { data: Achievement; in
         </div>
 
         <div className="text-2xl lg:text-4xl lg:text-nowrap font-semibold leading-[1.15em] tracking-tight text-white">
-          {data.number === 50 && "$"}
+          {data.number === 50 && '$'}
           <div className="hidden">{data.number}</div>
-          <Counter direction="up" targetValue={data.number} /> {data.symbol}
+          <Counter
+            direction="up"
+            targetValue={data.number}
+          />{' '}
+          {data.symbol}
         </div>
         <p className="text-white">{data.title}</p>
       </div>

@@ -1,22 +1,14 @@
-"use client";
-import AchievementCard from "@/components/achievement/achievement-card";
-import AnimatedBeam from "@/components/background-animation/background-animated-beam";
-import { ACHIEVEMENTS } from "@/constants";
-import React from "react";
+'use client';
+import AchievementCard from '@/components/achievement/achievement-card';
+import AnimatedBeam from '@/components/background-animation/background-animated-beam';
+import { ACHIEVEMENTS } from '@/constants';
+import React from 'react';
 
 export default function Achievement() {
   const [overlayColor, setOverlayColor] = React.useState({ x: 0, y: 0 });
 
   const handleMouseMove = React.useCallback(
-    ({
-      currentTarget,
-      clientX,
-      clientY,
-    }: {
-      currentTarget: HTMLElement;
-      clientX: number;
-      clientY: number;
-    }) => {
+    ({ currentTarget, clientX, clientY }: { currentTarget: HTMLElement; clientX: number; clientY: number }) => {
       const { left, top } = currentTarget.getBoundingClientRect();
       const x = clientX - left;
       const y = clientY - top;
@@ -43,12 +35,16 @@ export default function Achievement() {
                     rgba(255, 255, 255, 0.137),
                     transparent 80%
                   )
-                `,
+                `
               }}
             />
 
             {ACHIEVEMENTS?.map((item, i) => (
-              <AchievementCard key={i} data={item} index={i} />
+              <AchievementCard
+                key={i}
+                data={item}
+                index={i}
+              />
             ))}
           </div>
         </AnimatedBeam>
@@ -57,9 +53,7 @@ export default function Achievement() {
         <p className="text-4xl md:text-5xl font-black text-gray-800 leading-tight tracking-wide italic">
           “The most expensive tax we pay is the tax of ignorance”
         </p>
-        <p className="mt-4 text-xl text-gray-700 font-medium">
-          — Probably an Accountant
-        </p>
+        <p className="mt-4 text-xl text-gray-700 font-medium">— Probably an Accountant</p>
         <div className="mt-6 flex justify-center">
           <span className="block w-24 h-1 bg-gray-800 rounded-full transform transition-all duration-300 hover:w-32 hover:h-2"></span>
         </div>

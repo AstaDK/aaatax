@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 const variants = {
   hidden: { scale: 0 },
-  visible: { scale: 1 },
+  visible: { scale: 1 }
 };
 
 export const AnimatedComponent = ({ children }: { children: ReactNode }) => (

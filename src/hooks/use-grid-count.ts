@@ -24,6 +24,6 @@ export const useGridCount = () => {
 
   return {
     count,
-    containerRef,
+    containerRef
   };
 };

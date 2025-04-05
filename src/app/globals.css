@@ -1,19 +1,18 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    /* Box Shadows */
-    --shadow-sticky-menu: 0 4px 80px rgba(0, 0, 0, 0.1);
-    --shadow-sub-menu: 0 2px 70px -25px rgba(0, 0, 0, 0.3);
-    --shadow-input: 0px 2px 3px -1px rgba(0, 0, 0, 0.1),
-      0px 1px 0px 0px rgba(25, 28, 33, 0.02),
-      0px 0px 0px 1px rgba(25, 28, 33, 0.08);
+  /* Box Shadows */
+  --shadow-sticky-menu: 0 4px 80px rgba(0, 0, 0, 0.1);
+  --shadow-sub-menu: 0 2px 70px -25px rgba(0, 0, 0, 0.3);
+  --shadow-input:
+    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(25, 28, 33, 0.02), 0px 0px 0px 1px rgba(25, 28, 33, 0.08);
 
-    /* Transition Duration */
-    --transition-400: 400ms;
-    --transition-600: 600ms;
+  /* Transition Duration */
+  --transition-400: 400ms;
+  --transition-600: 600ms;
 
-    /* Border Radius */
-    --achievement-radius: 0px 25px 0px 25px;
+  /* Border Radius */
+  --achievement-radius: 0px 25px 0px 25px;
 }
 
 @layer utilities {
@@ -194,8 +193,7 @@
   }
 
   .animate-scroll {
-    animation: scroll var(--animation-duration, 40s)
-      var(--animation-direction, forwards) linear infinite;
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
   }
   .animate-meteor {
     animation: meteor var(--duration) var(--delay) ease-in-out infinite;

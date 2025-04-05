@@ -7,7 +7,7 @@ export const TextGenerateEffect = ({
   words,
   className,
   filter = true,
-  duration = 0.5,
+  duration = 0.5
 }: {
   words: string;
   className?: string;
@@ -21,12 +21,12 @@ export const TextGenerateEffect = ({
       'span',
       {
         opacity: 1,
-        filter: filter ? 'blur(0px)' : 'none',
+        filter: filter ? 'blur(0px)' : 'none'
       },
       {
         duration: duration ? duration : 1,
-        delay: stagger(0.2),
-      },
+        delay: stagger(0.2)
+      }
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scope.current]);
@@ -40,7 +40,7 @@ export const TextGenerateEffect = ({
               key={word + idx}
               className="text-white opacity-0"
               style={{
-                filter: filter ? 'blur(10px)' : 'none',
+                filter: filter ? 'blur(10px)' : 'none'
               }}
             >
               {word}{' '}
@@ -52,7 +52,7 @@ export const TextGenerateEffect = ({
   };
 
   return (
-    <div className={cn("font-bold", className)}>
+    <div className={cn('font-bold', className)}>
       <div className="mt-4">
         <div className=" text-white text-2xl leading-snug tracking-wide">
           <h1 className="mb-6 text-4xl sm:text-5xl xl:text-6xl 2xl:text-7xl font-semibold lg:leading-tight tracking-tight lg:tracking-tighter text-white">

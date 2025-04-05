@@ -7,7 +7,7 @@ import React from 'react';
 export default function CollisionMechanism({
   parentRef,
   containerRef,
-  beamOptions = {},
+  beamOptions = {}
 }: {
   containerRef: React.RefObject<HTMLDivElement | null>;
   parentRef: React.RefObject<HTMLDivElement>;
@@ -29,7 +29,7 @@ export default function CollisionMechanism({
     coordinates: { x: number; y: number } | null;
   }>({
     detected: false,
-    coordinates: null,
+    coordinates: null
   });
   const [beamKey, setBeamKey] = React.useState(0);
   const [cycleCollisionDetected, setCycleCollisionDetected] = React.useState(false);
@@ -49,8 +49,8 @@ export default function CollisionMechanism({
             detected: true,
             coordinates: {
               x: relativeX,
-              y: relativeY,
-            },
+              y: relativeY
+            }
           });
           setCycleCollisionDetected(true);
         }
@@ -84,14 +84,14 @@ export default function CollisionMechanism({
         initial={{
           translateY: beamOptions.initialY || '-200px',
           translateX: beamOptions.initialX || '0px',
-          rotate: beamOptions.rotate || 0,
+          rotate: beamOptions.rotate || 0
         }}
         variants={{
           animate: {
             translateY: beamOptions.translateY || '1800px',
             translateX: beamOptions.translateX || '0px',
-            rotate: beamOptions.rotate || 0,
-          },
+            rotate: beamOptions.rotate || 0
+          }
         }}
         transition={{
           duration: beamOptions.duration || 8,
@@ -99,11 +99,11 @@ export default function CollisionMechanism({
           repeatType: 'loop',
           ease: 'linear',
           delay: beamOptions.delay || 0,
-          repeatDelay: beamOptions.repeatDelay || 0,
+          repeatDelay: beamOptions.repeatDelay || 0
         }}
         className={cn(
           'absolute left-0 top-20 m-auto h-14 w-[0.1875rem] rounded-full bg-gradient-to-t from-indigo-500 via-purple-500 to-transparent',
-          beamOptions.className,
+          beamOptions.className
         )}
       />
       <AnimatePresence>
@@ -114,30 +114,33 @@ export default function CollisionMechanism({
             style={{
               left: `${collision.coordinates.x}px`,
               top: `${collision.coordinates.y}px`,
-              transform: 'translate(-50%, -50%)',
+              transform: 'translate(-50%, -50%)'
             }}
           />
         )}
       </AnimatePresence>
     </>
   );
-};
+}
 
 const SPANS = Array.from({ length: 20 }, (_, index) => ({
   id: index,
   initialX: 0,
   initialY: 0,
   directionX: Math.floor(Math.random() * 80 - 40),
-  directionY: Math.floor(Math.random() * -50 - 10),
+  directionY: Math.floor(Math.random() * -50 - 10)
 }));
 
 const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => (
-  <div {...props} className={cn("absolute z-10 h-2 w-2", props.className)}>
+  <div
+    {...props}
+    className={cn('absolute z-10 h-2 w-2', props.className)}
+  >
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1.5, ease: "easeOut" }}
+      transition={{ duration: 1.5, ease: 'easeOut' }}
       className="absolute -inset-x-10 top-0 m-auto h-2 w-10 rounded-full bg-gradient-to-r from-transparent via-indigo-500 to-transparent blur-sm"
     ></motion.div>
     {SPANS.map((span) => (
@@ -147,9 +150,9 @@ const Explosion = ({ ...props }: React.HTMLProps<HTMLDivElement>) => (
         animate={{
           x: span.directionX,
           y: span.directionY,
-          opacity: 0,
+          opacity: 0
         }}
-        transition={{ duration: Math.random() * 1.5 + 0.5, ease: "easeOut" }}
+        transition={{ duration: Math.random() * 1.5 + 0.5, ease: 'easeOut' }}
         className="absolute h-1 w-1 rounded-full bg-gradient-to-b from-indigo-500 to-purple-500"
       />
     ))}

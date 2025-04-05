@@ -1,43 +1,38 @@
-"use client";
+'use client';
 
-import { NAVIGATION } from "@/constants";
-import useSticky from "@/hooks/use-sticky";
-import { cn } from "@/lib/utils";
-import { ChevronDown, Menu } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useState } from "react";
-import { HoverButton } from "./button/hover-button";
-import MobileSidebarNav from "./mobile-sidebar-nav";
+import { NAVIGATION } from '@/constants';
+import useSticky from '@/hooks/use-sticky';
+import { cn } from '@/lib/utils';
+import { ChevronDown, Menu } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useCallback, useState } from 'react';
+import { HoverButton } from './button/hover-button';
+import MobileSidebarNav from './mobile-sidebar-nav';
 
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const isSticky = useSticky();
 
-  const toggleSidebar = useCallback(
-    () => setIsSidebarOpen((prev) => !prev),
-    []
-  );
+  const toggleSidebar = useCallback(() => setIsSidebarOpen((prev) => !prev), []);
 
   return (
     <>
-      <header
-        className={cn(
-          "fixed z-30 w-full lg:pt-12 top-0 transition-all duration-500",
-          isSticky && "lg:pt-0"
-        )}
-      >
+      <header className={cn('fixed z-30 w-full lg:pt-12 top-0 transition-all duration-500', isSticky && 'lg:pt-0')}>
         <div
           className={cn(
-            "transition-colors duration-500 bg-white ease-in-out py-5 lg:py-0",
-            isSticky ? "bg-white py-0" : "bg-transparent"
+            'transition-colors duration-500 bg-white ease-in-out py-5 lg:py-0',
+            isSticky ? 'bg-white py-0' : 'bg-transparent'
           )}
         >
           <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
             <div className="rounded-xl bg-white px-3 py-3 lg:px-5 lg:py-0">
               <nav className="py-0 flex justify-between items-center flex-wrap relative md:pt-0 lg:flex lg:flex-row lg:justify-start">
                 <div className="transition-all duration-500 relative mr-10">
-                  <Link className="flex items-center justify-between" href="/">
+                  <Link
+                    className="flex items-center justify-between"
+                    href="/"
+                  >
                     <Image
                       height={20}
                       width={60}
@@ -55,7 +50,10 @@ export default function Header() {
                           key={i}
                           className="font-normal list-none group/submenu relative py-8 px-4"
                         >
-                          <Link href={item.href} className="block">
+                          <Link
+                            href={item.href}
+                            className="block"
+                          >
                             <span className="menu-item-text relative flex items-center">
                               {item.label}
                               {item.submenu && item.submenu.length > 0 && (
@@ -68,9 +66,9 @@ export default function Header() {
                           {item.submenu && item.submenu.length > 0 && (
                             <ul
                               className={cn(
-                                "absolute left-0 top-full mt-2 w-[22rem] bg-white shadow-lg rounded-lg overflow-hidden origin-top",
-                                "transition-all duration-300 ease-out opacity-0 invisible scale-95 -translate-y-2.5",
-                                "group-hover/submenu:opacity-100 group-hover/submenu:visible group-hover/submenu:scale-100 group-hover/submenu:translate-y-0"
+                                'absolute left-0 top-full mt-2 w-[22rem] bg-white shadow-lg rounded-lg overflow-hidden origin-top',
+                                'transition-all duration-300 ease-out opacity-0 invisible scale-95 -translate-y-2.5',
+                                'group-hover/submenu:opacity-100 group-hover/submenu:visible group-hover/submenu:scale-100 group-hover/submenu:translate-y-0'
                               )}
                             >
                               {item.submenu.map((subItem, subIndex) => (
@@ -121,7 +119,10 @@ export default function Header() {
           </div>
         </div>
       </header>
-      <MobileSidebarNav isOpen={isSidebarOpen} onClose={toggleSidebar} />
+      <MobileSidebarNav
+        isOpen={isSidebarOpen}
+        onClose={toggleSidebar}
+      />
     </>
   );
 }

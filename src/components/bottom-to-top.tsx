@@ -12,7 +12,7 @@ export default function BottomToTop() {
   const bottomTopHandler = React.useCallback(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   }, []);
 
@@ -44,10 +44,10 @@ export default function BottomToTop() {
     <div onClick={bottomTopHandler}>
       <div
         className={cn(
-          "fixed right-7.5 bottom-7.5 h-12 w-12 cursor-pointer rounded-full shadow-inner border border-white z-50",
+          'fixed right-7.5 bottom-7.5 h-12 w-12 cursor-pointer rounded-full shadow-inner border border-white z-50',
           isSticky
-            ? "opacity-100 visible transform translate-y-0"
-            : "invisible opacity-0 translate-y-3.75 transition-all duration-200 ease-linear"
+            ? 'opacity-100 visible transform translate-y-0'
+            : 'invisible opacity-0 translate-y-3.75 transition-all duration-200 ease-linear'
         )}
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
