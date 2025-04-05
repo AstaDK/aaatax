@@ -1,3 +1,4 @@
+import About from "@/components/about";
 import Achievement from "@/components/achievement";
 import BottomToTop from "@/components/bottom-to-top";
 import Hero from "@/components/hero";
@@ -14,6 +15,7 @@ export default function Home() {
       <LogoComponent />
       <Service />
       <Achievement />
+      <About />
     </>
   );
 }

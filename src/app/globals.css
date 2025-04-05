@@ -12,9 +12,6 @@
     --transition-400: 400ms;
     --transition-600: 600ms;
 
-    /* Font Family */
-    --font-sora: "Sora", sans-serif;
-
     /* Border Radius */
     --achievement-radius: 0px 25px 0px 25px;
 }

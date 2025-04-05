@@ -1,18 +1,13 @@
 import { cn } from '@/lib/utils';
-import { AnimatePresence, motion } from "framer-motion";
 import { LucideIcon } from "lucide-react";
-import Counter from './counter';
+import { AnimatedComponent } from '@/components/animated-image';
+import Counter from '@/components/achievement/counter';
 
 type Achievement = {
   icon: LucideIcon;
   number: number;
   symbol: string;
   title: string;
-};
-
-const variants = {
-  hidden: { scale: 0 },
-  visible: { scale: 1 },
 };
 
 export default function AchievementCard({ data, index }: { data: Achievement; index: number }) {
@@ -33,16 +28,9 @@ export default function AchievementCard({ data, index }: { data: Achievement; in
     >
       <div className="rounded-xl text-center font-light backdrop-blur-sm">
         <div className="w-18 h-18 flex items-center justify-center bg-blue-600 rounded-lg mx-auto mb-5">
-          <AnimatePresence>
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={variants}
-              transition={{ duration: 0.5 }}
-            >
-              <data.icon className="w-10 h-10 text-white" />
-            </motion.div>
-          </AnimatePresence>
+          <AnimatedComponent>
+            <data.icon className="w-10 h-10 text-white" />
+          </AnimatedComponent>
         </div>
 
         <div className="text-2xl lg:text-4xl lg:text-nowrap font-semibold leading-[1.15em] tracking-tight text-white">
