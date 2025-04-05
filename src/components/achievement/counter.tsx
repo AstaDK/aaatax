@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
 type CounterProps = {
   format?: (value: number) => string;
   targetValue: number;
-  direction?: "up" | "down";
+  direction?: 'up' | 'down';
   delay?: number;
   className?: string;
 };
@@ -14,19 +14,19 @@ type CounterProps = {
 export default function Counter({
   format = Formatter.number,
   targetValue,
-  direction = "up",
+  direction = 'up',
   delay = 0,
-  className,
+  className
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const isGoingUp = direction === "up";
+  const isGoingUp = direction === 'up';
   const motionValue = useMotionValue(isGoingUp ? 0 : targetValue);
 
   const springValue = useSpring(motionValue, {
     damping: 60,
-    stiffness: 80,
+    stiffness: 80
   });
-  const isInView = useInView(ref, { margin: "0px", once: true });
+  const isInView = useInView(ref, { margin: '0px', once: true });
 
   useEffect(() => {
     if (!isInView) {
@@ -41,7 +41,7 @@ export default function Counter({
   }, [isInView, delay, isGoingUp, targetValue, motionValue]);
 
   useEffect(() => {
-    springValue.on("change", (value) => {
+    springValue.on('change', (value) => {
       if (ref.current) {
         ref.current.textContent = format ? format(value) : String(value);
       }
@@ -51,7 +51,7 @@ export default function Counter({
   return (
     <span
       ref={ref}
-      className={cn("text-4xl font-bold text-foreground", className)}
+      className={cn('text-4xl font-bold text-foreground', className)}
     />
   );
 }

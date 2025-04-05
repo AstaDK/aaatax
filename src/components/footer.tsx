@@ -1,6 +1,6 @@
-import Avatar from "@/components/avatar";
-import { LINKS, SOCIALS } from "@/constants";
-import Link from "next/link";
+import Avatar from '@/components/avatar';
+import { LINKS, SOCIALS } from '@/constants';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -24,8 +24,11 @@ export default function Footer() {
         </div>
         <div className="mt-6 flex flex-col items-center justify-center border-t border-slate-700 pt-4 md:flex-row md:justify-between">
           <p className="mb-4 text-sm text-slate-800 text-center md:mb-0">
-            © {new Date().getFullYear()}{" "}
-            <Link href="/" className="hover:text-slate-600">
+            © {new Date().getFullYear()}{' '}
+            <Link
+              href="/"
+              className="hover:text-slate-600"
+            >
               AAA Tax Consulting, LLC
             </Link>
             . All Rights Reserved.

@@ -1,17 +1,15 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/card/card";
-import { PRICING_PLANS } from "@/constants";
-import { cn } from "@/lib/utils";
-import { Check } from "lucide-react";
-import TextScrollAnimation from "./text-animation/text-scroll-animation";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/card/card';
+import { PRICING_PLANS } from '@/constants';
+import { cn } from '@/lib/utils';
+import { Check } from 'lucide-react';
+import TextScrollAnimation from './text-animation/text-scroll-animation';
 
 export default function Pricing() {
   return (
-    <div id="pricing" className="py-10 md:py-16">
+    <div
+      id="pricing"
+      className="py-10 md:py-16"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="pb-12 text-center">
           <TextScrollAnimation
@@ -23,18 +21,13 @@ export default function Pricing() {
           {PRICING_PLANS.map((plan) => (
             <Card
               key={plan.id}
-              className={cn(
-                "w-full rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300",
-                {
-                  "bg-navy text-white": plan.isHighlighted,
-                  "bg-white border border-slate-200": !plan.isHighlighted,
-                }
-              )}
+              className={cn('w-full rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300', {
+                'bg-navy text-white': plan.isHighlighted,
+                'bg-white border border-slate-200': !plan.isHighlighted
+              })}
             >
               <CardHeader>
-                <CardTitle className="text-xl font-semibold">
-                  Starting at
-                </CardTitle>
+                <CardTitle className="text-xl font-semibold">Starting at</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col gap-8">
                 <div className="flex items-center justify-between text-3xl font-bold">
@@ -57,10 +50,10 @@ export default function Pricing() {
                 </div>
                 <button
                   className={cn(
-                    "w-full flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 cursor-pointer",
+                    'w-full flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 cursor-pointer',
                     {
-                      "bg-white text-navy": plan.isHighlighted,
-                      "bg-navy text-white": !plan.isHighlighted,
+                      'bg-white text-navy': plan.isHighlighted,
+                      'bg-navy text-white': !plan.isHighlighted
                     }
                   )}
                 >

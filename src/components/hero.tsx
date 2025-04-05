@@ -1,11 +1,11 @@
-"use client";
-import { AnimatePresence } from "framer-motion";
-import Image from "next/image";
-import { CardContainer, CardItem } from "./3d-animation/3d-effect";
-import { BackgroundBeamsWithCollision } from "./background-animation/background-beams-with-collision";
-import BorderMovingButton from "./button/border-moving-button";
-import { HoverButton } from "./button/hover-button";
-import { TextGenerateEffect } from "./text-animation/text-generate-effect";
+'use client';
+import { AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
+import { CardContainer, CardItem } from './3d-animation/3d-effect';
+import { BackgroundBeamsWithCollision } from './background-animation/background-beams-with-collision';
+import BorderMovingButton from './button/border-moving-button';
+import { HoverButton } from './button/hover-button';
+import { TextGenerateEffect } from './text-animation/text-generate-effect';
 
 export default function Hero() {
   return (
@@ -28,13 +28,10 @@ export default function Hero() {
                 className="text-3xl lg:text-5xl font-bold text-white mb-4"
               />
               <p className="text-white text-lg leading-relaxed mb-6">
-                Take control of your business success with expert tax and
-                financial consulting solutions.
+                Take control of your business success with expert tax and financial consulting solutions.
               </p>
               <div className="flex justify-center lg:justify-start gap-4">
-                <BorderMovingButton href="/about">
-                  Schedule a Free Consultation
-                </BorderMovingButton>
+                <BorderMovingButton href="/about">Schedule a Free Consultation</BorderMovingButton>
                 <HoverButton
                   customClass="border-white"
                   bgAnimation="bg-white"
@@ -49,7 +46,10 @@ export default function Hero() {
             <div className="flex justify-center">
               <AnimatePresence>
                 <CardContainer>
-                  <CardItem translateZ="100" className="w-full">
+                  <CardItem
+                    translateZ="100"
+                    className="w-full"
+                  >
                     <Image
                       src="/hero/hero-thumb1.webp"
                       alt="hero"

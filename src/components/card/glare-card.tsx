@@ -2,28 +2,22 @@
 import { cn } from '@/lib/utils';
 import { useRef } from 'react';
 
-export const GlareCard = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+export const GlareCard = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   const isPointerInside = useRef(false);
   const refElement = useRef<HTMLDivElement>(null);
   const state = useRef({
     glare: {
       x: 50,
-      y: 50,
+      y: 50
     },
     background: {
       x: 50,
-      y: 50,
+      y: 50
     },
     rotate: {
       x: 0,
-      y: 0,
-    },
+      y: 0
+    }
   });
   const containerStyle = {
     '--m-x': '50%',
@@ -37,7 +31,7 @@ export const GlareCard = ({
     '--opacity': '0',
     '--radius': '12px',
     '--easing': 'ease',
-    '--transition': 'var(--duration) var(--easing)',
+    '--transition': 'var(--duration) var(--easing)'
   } as any;
 
   const backgroundStyle = {
@@ -49,7 +43,7 @@ export const GlareCard = ({
       'repeating-linear-gradient( 128deg,rgba(240, 240, 240, 0.8) 0%,rgba(220, 220, 220, 0.8) 3.8%,rgba(220, 220, 220, 0.8) 4.5%,rgba(220, 220, 220, 0.8) 5.2%,#ffffff 10%,#ffffff 12% ) var(--bg-x) var(--bg-y)/300% no-repeat',
     '--shade':
       'radial-gradient( farthest-corner circle at var(--m-x) var(--m-y),rgba(255,255,255,0.2) 12%,rgba(255,255,255,0.3) 20%,rgba(255,255,255,0.5) 120% ) var(--bg-x) var(--bg-y)/300% no-repeat',
-    backgroundBlendMode: 'overlay, soft-light, normal',
+    backgroundBlendMode: 'overlay, soft-light, normal'
   };
 
   const updateStyles = () => {
@@ -73,15 +67,15 @@ export const GlareCard = ({
         const rect = event.currentTarget.getBoundingClientRect();
         const position = {
           x: event.clientX - rect.left,
-          y: event.clientY - rect.top,
+          y: event.clientY - rect.top
         };
         const percentage = {
           x: (100 / rect.width) * position.x,
-          y: (100 / rect.height) * position.y,
+          y: (100 / rect.height) * position.y
         };
         const delta = {
           x: percentage.x - 50,
-          y: percentage.y - 50,
+          y: percentage.y - 50
         };
 
         const { background, rotate, glare } = state.current;

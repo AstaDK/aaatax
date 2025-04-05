@@ -1,25 +1,19 @@
-"use client";
+'use client';
 
-import { LINKS } from "@/constants";
-import { cn } from "@/lib/utils";
-import { ChevronDown, X } from "lucide-react";
-import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
-import Avatar from "./avatar";
-import { HoverButton } from "./button/hover-button";
+import { LINKS } from '@/constants';
+import { cn } from '@/lib/utils';
+import { ChevronDown, X } from 'lucide-react';
+import Link from 'next/link';
+import { useCallback, useEffect, useState } from 'react';
+import Avatar from './avatar';
+import { HoverButton } from './button/hover-button';
 
-export default function MobileSidebarNav({
-  isOpen,
-  onClose,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-}) {
+export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const [openSubmenu, setOpenSubmenu] = useState<number | null>(null);
 
   const handleEscapeKey = useCallback(
     (event: KeyboardEvent) => {
-      if (event.key === "Escape" && isOpen) {
+      if (event.key === 'Escape' && isOpen) {
         onClose();
       }
     },
@@ -27,9 +21,9 @@ export default function MobileSidebarNav({
   );
 
   useEffect(() => {
-    document.addEventListener("keydown", handleEscapeKey);
+    document.addEventListener('keydown', handleEscapeKey);
     return () => {
-      document.removeEventListener("keydown", handleEscapeKey);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
   }, [handleEscapeKey]);
 
@@ -44,13 +38,16 @@ export default function MobileSidebarNav({
     <>
       <div
         className={cn(
-          "fixed inset-y-0 left-0 z-50 w-[280px] bg-white shadow-xl transform transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]",
-          isOpen ? "translate-x-0" : "-translate-x-full"
+          'fixed inset-y-0 left-0 z-50 w-[280px] bg-white shadow-xl transform transition-transform duration-500 ease-[cubic-bezier(0.68,-0.55,0.27,1.55)]',
+          isOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <h5>
-            <Link className="flex items-center justify-between" href="/">
+            <Link
+              className="flex items-center justify-between"
+              href="/"
+            >
               <Avatar />
             </Link>
           </h5>
@@ -84,17 +81,15 @@ export default function MobileSidebarNav({
                       </Link>
                       <ChevronDown
                         className={cn(
-                          "h-4 w-4 text-gray-500 transition-transform duration-300",
-                          openSubmenu === i ? "rotate-180" : "rotate-0"
+                          'h-4 w-4 text-gray-500 transition-transform duration-300',
+                          openSubmenu === i ? 'rotate-180' : 'rotate-0'
                         )}
                       />
                     </button>
                     <ul
                       className={cn(
-                        "mt-2 space-y-1 pl-4 overflow-hidden transition-all duration-300 ease-in-out",
-                        openSubmenu === i
-                          ? "max-h-96 opacity-100"
-                          : "max-h-0 opacity-0"
+                        'mt-2 space-y-1 pl-4 overflow-hidden transition-all duration-300 ease-in-out',
+                        openSubmenu === i ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                       )}
                     >
                       {item.submenu.map((item2, i2) => (

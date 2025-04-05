@@ -1,11 +1,11 @@
-import Counter from "@/components/achievement/counter";
-import { AnimatedComponent } from "@/components/animated-image";
-import { cn } from "@/lib/utils";
-import { LucideIcon } from "lucide-react";
+import Counter from '@/components/achievement/counter';
+import { AnimatedComponent } from '@/components/animated-image';
+import { cn } from '@/lib/utils';
+import { LucideIcon } from 'lucide-react';
 
 export default function AchievementCard({
   data,
-  index,
+  index
 }: {
   data: {
     icon: LucideIcon;
@@ -21,19 +21,14 @@ export default function AchievementCard({
 
   return (
     <div
-      className={cn(
-        "relative text-slate-400 flex-none basis-1/2 lg:basis-1/4 transition-opacity duration-400 ease"
-      )}
+      className={cn('relative text-slate-400 flex-none basis-1/2 lg:basis-1/4 transition-opacity duration-400 ease')}
     >
       <div
-        className={cn(
-          "absolute top-1/2 right-[-2px] h-24 w-0.5 bg-white transform -translate-y-1/2 z-10",
-          {
-            block: isLineOnMobile,
-            "hidden lg:block": isLineOnDesktop && !isLineOnMobile,
-            hidden: !isLineOnMobile && !isLineOnDesktop,
-          }
-        )}
+        className={cn('absolute top-1/2 right-[-2px] h-24 w-0.5 bg-white transform -translate-y-1/2 z-10', {
+          block: isLineOnMobile,
+          'hidden lg:block': isLineOnDesktop && !isLineOnMobile,
+          hidden: !isLineOnMobile && !isLineOnDesktop
+        })}
       />
 
       <div className="rounded-xl text-center font-light">
@@ -44,9 +39,13 @@ export default function AchievementCard({
         </div>
 
         <div className="text-4xl lg:text-nowrap font-semibold leading-[1.15em] tracking-tight text-white">
-          {data.number === 50 && "$"}
+          {data.number === 50 && '$'}
           <div className="hidden">{data.number}</div>
-          <Counter direction="up" targetValue={data.number} /> {data.symbol}
+          <Counter
+            direction="up"
+            targetValue={data.number}
+          />{' '}
+          {data.symbol}
         </div>
         <p className="text-white">{data.title}</p>
       </div>

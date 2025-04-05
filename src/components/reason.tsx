@@ -1,10 +1,13 @@
-import { REASONS } from "@/constants";
-import { cn } from "@/lib/utils";
-import TextScrollAnimation from "./text-animation/text-scroll-animation";
+import { REASONS } from '@/constants';
+import { cn } from '@/lib/utils';
+import TextScrollAnimation from './text-animation/text-scroll-animation';
 
 export default function Reason() {
   return (
-    <div id="reasons" className="py-10 md:py-16">
+    <div
+      id="reasons"
+      className="py-10 md:py-16"
+    >
       <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
         <div className="pb-12 md:pb-16 max-w-2xl mx-auto text-center">
           <TextScrollAnimation
@@ -17,10 +20,9 @@ export default function Reason() {
             <div
               key={feature.title}
               className={cn(
-                "flex flex-col lg:border-r  py-10 relative group/feature border-slate-800",
-                (index === 0 || index === 3) &&
-                  "lg:border-l dark:border-slate-800",
-                index < 3 && "lg:border-b border-slate-800"
+                'flex flex-col lg:border-r  py-10 relative group/feature border-slate-800',
+                (index === 0 || index === 3) && 'lg:border-l dark:border-slate-800',
+                index < 3 && 'lg:border-b border-slate-800'
               )}
             >
               {index < 3 && (
@@ -38,9 +40,7 @@ export default function Reason() {
                   {feature.title}
                 </span>
               </div>
-              <p className="text-lg text-slate-600 relative z-10 px-10">
-                {feature.description}
-              </p>
+              <p className="text-lg text-slate-600 relative z-10 px-10">{feature.description}</p>
             </div>
           ))}
         </div>

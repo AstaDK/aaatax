@@ -1,7 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --color-navy: #040D43;
+  --color-navy: #040d43;
 
   /* Border Radius */
   --achievement-radius: 0px 25px 0px 25px;

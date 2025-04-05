@@ -1,12 +1,15 @@
-import { ABOUT_US_CONTENT } from "@/constants";
-import Image from "next/image";
-import { AnimatedComponent } from "./animated-image";
-import { HoverButton } from "./button/hover-button";
-import TextScrollAnimation from "./text-animation/text-scroll-animation";
+import { ABOUT_US_CONTENT } from '@/constants';
+import Image from 'next/image';
+import { AnimatedComponent } from './animated-image';
+import { HoverButton } from './button/hover-button';
+import TextScrollAnimation from './text-animation/text-scroll-animation';
 
 export default function About() {
   return (
-    <div id="about" className="py-10 md:py-16">
+    <div
+      id="about"
+      className="py-10 md:py-16"
+    >
       <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
         <div className="flex flex-wrap -mx-3">
           <div className="w-full px-3 md:w-1/2">
@@ -69,13 +72,11 @@ export default function About() {
                 text="Committed to Your Financial Success"
               />
               <h2 className="mb-5 text-xl font-semibold text-slate-800 leading-8 tracking-tight">
-                With over a decade of experience, AAA Business and Tax
-                Consulting has built a strong reputation for delivering expert
-                tax, accounting, and business advisory services.{" "}
+                With over a decade of experience, AAA Business and Tax Consulting has built a strong reputation for
+                delivering expert tax, accounting, and business advisory services.{' '}
                 <span className="text-red-700">
-                  Our team brings extensive experience working with Fortune 500
-                  companies and has earned the prestigious Enrolled Agent (EA)
-                  certification, demonstrating our deep expertise in taxation.
+                  Our team brings extensive experience working with Fortune 500 companies and has earned the prestigious
+                  Enrolled Agent (EA) certification, demonstrating our deep expertise in taxation.
                 </span>
               </h2>
               {ABOUT_US_CONTENT.map((paragraph, index) => (

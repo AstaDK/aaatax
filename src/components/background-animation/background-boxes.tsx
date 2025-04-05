@@ -1,20 +1,20 @@
-"use client";
-import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import React from "react";
+'use client';
+import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
+import React from 'react';
 
 const rows = new Array(50).fill(1);
 const cols = new Array(30).fill(1);
 const colors = [
-  "rgb(125, 211, 252)",
-  "rgb(249, 168, 212)",
-  "rgb(134, 239, 172)",
-  "rgb(253, 224, 71)",
-  "rgb(252, 165, 165)",
-  "rgb(216, 180, 254)",
-  "rgb(147, 197, 253)",
-  "rgb(165, 180, 252)",
-  "rgb(196, 181, 253)",
+  'rgb(125, 211, 252)',
+  'rgb(249, 168, 212)',
+  'rgb(134, 239, 172)',
+  'rgb(253, 224, 71)',
+  'rgb(252, 165, 165)',
+  'rgb(216, 180, 254)',
+  'rgb(147, 197, 253)',
+  'rgb(165, 180, 252)',
+  'rgb(196, 181, 253)'
 ];
 
 const getRandomColor = () => {
@@ -24,10 +24,10 @@ const getRandomColor = () => {
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => (
   <div
     style={{
-      transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`,
+      transform: `translate(-40%,-60%) skewX(-48deg) skewY(14deg) scale(0.675) rotate(0deg) translateZ(0)`
     }}
     className={cn(
-      "absolute left-full p-4 top-full flex -translate-x-[70%] -translate-y-full w-full h-full z-0 ",
+      'absolute left-full p-4 top-full flex -translate-x-[70%] -translate-y-full w-full h-full z-0 ',
       className
     )}
     {...rest}
@@ -41,10 +41,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => (
           <motion.div
             whileHover={{
               backgroundColor: `var(${getRandomColor()})`,
-              transition: { duration: 0 },
+              transition: { duration: 0 }
             }}
             animate={{
-              transition: { duration: 2 },
+              transition: { duration: 2 }
             }}
             key={`col` + j}
             className="w-16 h-8  border-r border-t border-slate-700 relative"
