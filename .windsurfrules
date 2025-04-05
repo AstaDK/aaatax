@@ -1,0 +1,10 @@
+1. My project is a next.js project
+2. My project is a typescript project
+3. My project is a tailwindcss project
+4. My project is a react project
+5. Project use prettier for code formatting
+6. Project use eslint for code linting
+7. Project should be responsive and mobile-first
+8. Project should optimize performance
+9. Project SEO optimization
+10. Project should be use useCallback, useMemo as much as possible
