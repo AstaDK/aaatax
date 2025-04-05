@@ -1,5 +1,4 @@
 import { SERVICES } from '@/constants';
-import { GlareCard } from './feature/glare-card';
 import TextScrollAnimation from './text-animation/text-scroll-animation';
 
 const variants = {
@@ -14,31 +13,32 @@ const variants = {
 
 export default function Service() {
   return (
-    <div id="services" className="py-10 md:py-20">
+    <div id="services" className="py-10 md:py-16">
       <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
-        <div className="pb-12 md:pb-20 max-w-2xl mx-auto text-center">
+        <div className="pb-12 md:pb-16 max-w-2xl mx-auto text-center">
           <TextScrollAnimation
             variants={variants}
-            wrapperClass="lg:text-nowrap font-semibold text-2xl sm:text-5xl leading-[1.15em] tracking-tight text-black"
+            wrapperClass="lg:text-nowrap font-semibold text-2xl sm:text-6xl leading-[1.15em] tracking-tight text-black"
             text="What we do ?"
           />
         </div>
-        <div className="flex flex-wrap -mx-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
           {SERVICES.map((item, i) => (
-            <div key={i} className="p-3 w-full md:w-1/2">
-              <GlareCard>
-                <div className="flex gap-6 m-6">
-                  <div className="bg-gray-100 w-24 h-24 flex-shrink-0 flex items-center justify-center rounded-xl transition-all duration-300 ease-in-out">
-                    <item.icon size={49} />
-                  </div>
-                  <div className="text-left">
-                    <h2 className="font-semibold text-xl leading-7 tracking-tight text-gray-800 mb-2">
-                      {item.title}
-                    </h2>
-                    <p className="text-gray-400">{item.description}</p>
-                  </div>
-                </div>
-              </GlareCard>
+            <div
+              key={i}
+              className="border-2 border-gray-800 rounded-3xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            >
+              <div className="flex items-center gap-4 p-6 border-b-2 border-gray-800 rounded-t-3xl bg-gray-50">
+                <item.icon size={32} />
+                <p className="text-gray-800 font-semibold text-xl lg:text-3xl tracking-tight">
+                  {item.title}
+                </p>
+              </div>
+              <div className="px-6 py-8">
+                <p className="text-gray-700 text-lg lg:text-xl leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>

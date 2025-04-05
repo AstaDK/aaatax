@@ -1,16 +1,11 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { CardContainer, CardItem } from "./3d-animation/3d-effect";
 import { BackgroundBeamsWithCollision } from "./background-animation/background-beams-with-collision";
 import BorderMovingButton from "./button/border-moving-button";
 import { HoverButton } from "./button/hover-button";
 import { TextGenerateEffect } from "./text-animation/text-generate-effect";
-
-const variants = {
-  hidden: { scale: 0 },
-  visible: { scale: 1 },
-};
 
 export default function Hero() {
   return (
@@ -23,7 +18,7 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Section */}
             <div className="text-center lg:text-left">
-              <h5 className="font-medium mb-4 text-white font-sora text-xl lg:text-2xl">
+              <h5 className="font-medium mb-4 text-white text-xl lg:text-2xl">
                 We provide professional Accounting and Taxation Services
               </h5>
               <TextGenerateEffect
@@ -53,26 +48,19 @@ export default function Hero() {
             {/* Image Section */}
             <div className="flex justify-center">
               <AnimatePresence>
-                <motion.div
-                  initial="hidden"
-                  whileInView="visible"
-                  variants={variants}
-                  transition={{ duration: 0.5 }}
-                >
-                  <CardContainer className="inter-var">
-                    <CardItem translateZ="100" className="w-full">
-                      <Image
-                        src="/hero/hero-thumb1.webp"
-                        alt="hero"
-                        width={526}
-                        height={590}
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        priority
-                        className="h-auto w-full rounded-lg"
-                      />
-                    </CardItem>
-                  </CardContainer>
-                </motion.div>
+                <CardContainer>
+                  <CardItem translateZ="100" className="w-full">
+                    <Image
+                      src="/hero/hero-thumb1.webp"
+                      alt="hero"
+                      width={526}
+                      height={590}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority
+                      className="h-auto w-full rounded-lg"
+                    />
+                  </CardItem>
+                </CardContainer>
               </AnimatePresence>
             </div>
           </div>
