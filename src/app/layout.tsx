@@ -1,15 +1,15 @@
-import { sora } from "@/lib/fonts";
+import { inter } from "@/lib/fonts";
 import type { Metadata } from "next";
 import "./globals.css";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title:
-      "AAA Tax Consulting: Expert Tax Services for Individuals and Businesses",
+      "AAA Tax Consulting, LLC - Premium Tax Services at an affordable price",
     description:
       "AAA Tax Consulting provides expert tax preparation and consulting services for both individuals and businesses, ensuring maximum refunds and financial efficiency. Our team offers affordable and reliable solutions for your tax and financial needs.",
-    applicationName: "AAA Tax Consulting",
-    authors: [{ name: "AAA Tax Consulting" }],
+    applicationName: "AAA Tax Consulting, LLC",
+    authors: [{ name: "AAA Tax Consulting, LLC" }],
     keywords: [
       "tax services",
       "tax consulting",
@@ -24,9 +24,9 @@ export async function generateMetadata(): Promise<Metadata> {
       "tax experts",
       "tax help",
     ],
-    generator: "AAA Tax Consulting",
-    creator: "AAA Tax Consulting",
-    publisher: "AAA Tax Consulting",
+    generator: "AAA Tax Consulting, LLC",
+    creator: "AAA Tax Consulting, LLC",
+    publisher: "AAA Tax Consulting, LLC",
     twitter: {
       card: "summary_large_image",
     },
@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${sora.className}`}>{children}</body>
+      <body className={`${inter.className}`}>{children}</body>
     </html>
   );
 }

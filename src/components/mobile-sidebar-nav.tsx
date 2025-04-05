@@ -48,7 +48,7 @@ export default function MobileSidebarNav({
                   height={20}
                   width={60}
                   loading="lazy"
-                  src="/assets/images/logo/logo.png"
+                  src="/logo/logo.png"
                   alt="AAA Tax Logo"
                 />
               </Link>
