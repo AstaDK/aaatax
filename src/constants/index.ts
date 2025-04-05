@@ -1,3 +1,5 @@
+import { Banknote, Briefcase, ChartNoAxesCombined, Earth, HandCoins, Search, Shield, Trophy } from "lucide-react";
+
 export const NAVIGATION = [
   {
     label: "Services",
@@ -90,5 +92,65 @@ export const BEAMS = [
     duration: 5,
     repeatDelay: 2,
     className: "h-12",
+  },
+];
+
+export const LOGOS = [
+  { icon: "/logo/majlis-mocha.png" },
+  { icon: "/logo/awad-of-properties.png" },
+  { icon: "/logo/sur-consulting.png" },
+  { icon: "/logo/hasana.jpg" },
+];
+
+export const SERVICES = [
+  {
+    icon: Briefcase,
+    title: "Accounting & Payroll",
+    description: "Accurate financial records and seamless payroll processing.",
+  },
+  {
+    icon: Shield,
+    title: "Audit Defense",
+    description:
+      "Expert representation against government audits, reducing tax and penalty liabilities.",
+  },
+  {
+    icon: Banknote,
+    title: "Tax Services",
+    description:
+      "Comprehensive tax filing and compliance support for local and federal regulations.",
+  },
+  {
+    icon: ChartNoAxesCombined,
+    title: "Planning & Strategy",
+    description:
+      "Strategic financial planning to minimize tax liabilities and support business growth.",
+  },
+];
+
+export const ACHIEVEMENTS = [
+  {
+    icon: Trophy,
+    number: 10,
+    symbol: "Years",
+    title: "Proven Track Record",
+  },
+  {
+    icon: Earth,
+    number: 98,
+    symbol: "%",
+    title: "Nationwide clients",
+  },
+  {
+    icon: HandCoins,
+    number: 50,
+    symbol: "M+",
+    title: "Recovered in tax credits",
+  },
+  {
+    icon: Search,
+    number: 85,
+    symbol: "%",
+    title: "Reduction in Tax Audits & Penalties",
   },
 ];

@@ -89,9 +89,6 @@
   .transition-600 {
     transition-duration: var(--transition-600);
   }
-  .font-sora {
-    font-family: var(--font-sora);
-  }
   .achievement-radius {
     border-radius: var(--achievement-radius);
   }
