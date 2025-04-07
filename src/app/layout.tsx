@@ -1,6 +1,8 @@
 import { inter } from '@/lib/fonts';
 import type { Metadata } from 'next';
 import './globals.css';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -42,7 +44,11 @@ export default function RootLayout({
       lang="en"
       className="scroll-smooth"
     >
-      <body className={`${inter.className}`}>{children}</body>
+      <body className={`${inter.className}`}>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

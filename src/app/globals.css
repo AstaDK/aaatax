@@ -1,15 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Box Shadows */
-  --shadow-sticky-menu: 0 4px 80px rgba(0, 0, 0, 0.1);
-  --shadow-sub-menu: 0 2px 70px -25px rgba(0, 0, 0, 0.3);
-  --shadow-input:
-    0px 2px 3px -1px rgba(0, 0, 0, 0.1), 0px 1px 0px 0px rgba(25, 28, 33, 0.02), 0px 0px 0px 1px rgba(25, 28, 33, 0.08);
-
-  /* Transition Duration */
-  --transition-400: 400ms;
-  --transition-600: 600ms;
+  --color-navy: #040d43;
 
   /* Border Radius */
   --achievement-radius: 0px 25px 0px 25px;
@@ -38,155 +30,43 @@
     border-top: 60px solid #ffffff;
     border-right: 60px solid transparent;
   }
+
   .optech-counter-wrap::after {
     border-bottom: 60px solid #ffffff;
     border-left: 60px solid transparent;
   }
 
-  .contact-card::before {
-    content: '';
-    position: absolute;
-    left: 2px;
-    top: -2px;
-    width: 0;
-    height: 0;
-  }
-
-  .contact-card::after {
-    content: '';
-    position: absolute;
-    right: 2px;
-    bottom: -2px;
-    width: 0;
-    height: 0;
-  }
-
-  .contact-card::before {
-    border-top: 60px solid #ffffff;
-    border-right: 60px solid transparent;
-  }
-  .contact-card::after {
-    border-bottom: 60px solid #040d43;
-    border-left: 60px solid transparent;
-  }
-
-  .sticky-menu-shadow {
-    box-shadow: var(--shadow-sticky-menu);
-  }
-  .sub-menu-shadow {
-    box-shadow: var(--shadow-sub-menu);
-  }
-  .input-shadow {
-    box-shadow: var(--shadow-input);
-  }
-  .transition-400 {
-    transition-duration: var(--transition-400);
-  }
-  .transition-600 {
-    transition-duration: var(--transition-600);
-  }
   .achievement-radius {
     border-radius: var(--achievement-radius);
-  }
-
-  /* Container Classes */
-  .bstr-container {
-    max-width: 100%;
-    @media (min-width: 576px) {
-      max-width: 540px;
-    }
-    @media (min-width: 768px) {
-      max-width: 720px;
-    }
-    @media (min-width: 992px) {
-      max-width: 960px;
-    }
-    @media (min-width: 1200px) {
-      max-width: 1140px;
-    }
-    @media (min-width: 1400px) {
-      max-width: 1320px;
-    }
-  }
-
-  .bstr-container-md {
-    max-width: 100%;
-    @media (min-width: 768px) {
-      max-width: 720px;
-    }
-    @media (min-width: 992px) {
-      max-width: 960px;
-    }
-    @media (min-width: 1200px) {
-      max-width: 1140px;
-    }
-    @media (min-width: 1400px) {
-      max-width: 1320px;
-    }
-  }
-
-  .bstr-container-lg {
-    max-width: 100%;
-    @media (min-width: 992px) {
-      max-width: 960px;
-    }
-    @media (min-width: 1200px) {
-      max-width: 1140px;
-    }
-    @media (min-width: 1400px) {
-      max-width: 1320px;
-    }
-  }
-
-  .bstr-container-xl {
-    max-width: 100%;
-    @media (min-width: 1200px) {
-      max-width: 1140px;
-    }
-    @media (min-width: 1400px) {
-      max-width: 1320px;
-    }
-  }
-
-  .bstr-container-xxl {
-    max-width: 100%;
-    @media (min-width: 1400px) {
-      max-width: 1320px;
-    }
-  }
-
-  .bstr-container-fluid {
-    max-width: 100%;
   }
 }
 
 @layer utilities {
-  /* Animations */
-  @keyframes scroll {
-    to {
-      transform: translate(calc(-50% - 0.5rem));
-    }
-  }
   @keyframes marquee {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(calc(-100% - var(--gap)));
     }
   }
+
   @keyframes marquee-vertical {
     from {
       transform: translateY(0);
     }
+
     to {
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
+
   @keyframes meteor {
     0% {
       transform: translateY(-20%) translateX(-50%);
     }
+
     100% {
       transform: translateY(300%) translateX(-50%);
     }
@@ -195,12 +75,15 @@
   .animate-scroll {
     animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
   }
+
   .animate-meteor {
     animation: meteor var(--duration) var(--delay) ease-in-out infinite;
   }
+
   .animate-marquee {
     animation: marquee var(--duration) linear infinite;
   }
+
   .animate-marquee-vertical {
     animation: marquee-vertical var(--duration) linear infinite;
   }

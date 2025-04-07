@@ -12,6 +12,17 @@ const containerVariants = {
     }
   }
 };
+
+const variants = {
+  hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
+  visible: {
+    filter: 'blur(0px)',
+    opacity: 1,
+    y: 0,
+    transition: { ease: 'linear' }
+  }
+};
+
 const generateVariants = (direction: Direction): { hidden: Variant; visible: Variant } => {
   const axis = direction === 'left' || direction === 'right' ? 'x' : 'y';
   const value = direction === 'right' || direction === 'down' ? 100 : -100;
@@ -36,7 +47,6 @@ const TextScrollAnimation = ({
   text,
   wrapperClass = '',
   viewport = defaultViewport,
-  variants,
   direction = 'down',
   letterAnime = false,
   lineAnime = false
@@ -48,10 +58,6 @@ const TextScrollAnimation = ({
     amount?: number;
     margin?: string;
     once?: boolean;
-  };
-  variants?: {
-    hidden?: any;
-    visible?: any;
   };
   direction?: Direction;
   letterAnime?: boolean;

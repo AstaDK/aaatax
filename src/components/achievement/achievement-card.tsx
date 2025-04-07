@@ -1,39 +1,49 @@
+import Counter from '@/components/achievement/counter';
+import { AnimatedComponent } from '@/components/animated-image';
 import { cn } from '@/lib/utils';
 import { LucideIcon } from 'lucide-react';
-import { AnimatedComponent } from '@/components/animated-image';
-import Counter from '@/components/achievement/counter';
+import React from 'react';
 
-type Achievement = {
-  icon: LucideIcon;
-  number: number;
-  symbol: string;
-  title: string;
-};
-
-export default function AchievementCard({ data, index }: { data: Achievement; index: number }) {
-  const isOdd = index % 2 === 0;
+export default function AchievementCard({
+  data,
+  index
+}: {
+  data: {
+    icon: LucideIcon;
+    number: number;
+    symbol: string;
+    title: string;
+  };
+  index: number;
+}) {
+  const { isLineOnMobile, isLineOnDesktop } = React.useMemo(
+    () => ({
+      isLineOnMobile: index === 0 || index === 2,
+      isLineOnDesktop: index < 3
+    }),
+    [index]
+  );
 
   return (
     <div
-      className={cn(
-        'relative text-gray-400 flex-none basis-1/2 lg:basis-[160px] transition-opacity transform duration-400 ease',
-        'before:absolute before:top-1/2 before:h-24 before:w-0.5 before:bg-white before:transform before:-translate-y-1/2',
-        {
-          'before:content-[""] before:right-0': isOdd,
-          'before:content-none lg:before:content-[""]': !isOdd,
-          'lg:before:right-[-25%] xl:before:right-[-57%]': true,
-          'last:before:hidden': true
-        }
-      )}
+      className={cn('relative text-slate-400 flex-none basis-1/2 lg:basis-1/4 transition-opacity duration-400 ease')}
     >
-      <div className="rounded-xl text-center font-light backdrop-blur-sm">
+      <div
+        className={cn('absolute top-1/2 right-[-2px] h-24 w-0.5 bg-white transform -translate-y-1/2 z-10', {
+          block: isLineOnMobile,
+          'hidden lg:block': isLineOnDesktop && !isLineOnMobile,
+          hidden: !isLineOnMobile && !isLineOnDesktop
+        })}
+      />
+
+      <div className="rounded-xl text-center font-light">
         <div className="w-18 h-18 flex items-center justify-center bg-blue-600 rounded-lg mx-auto mb-5">
           <AnimatedComponent>
             <data.icon className="w-10 h-10 text-white" />
           </AnimatedComponent>
         </div>
 
-        <div className="text-2xl lg:text-4xl lg:text-nowrap font-semibold leading-[1.15em] tracking-tight text-white">
+        <div className="text-4xl lg:text-nowrap font-semibold leading-[1.15em] tracking-tight text-white">
           {data.number === 50 && '$'}
           <div className="hidden">{data.number}</div>
           <Counter

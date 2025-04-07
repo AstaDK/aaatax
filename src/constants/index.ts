@@ -1,6 +1,24 @@
-import { Banknote, Briefcase, ChartNoAxesCombined, Earth, HandCoins, Search, Shield, Trophy } from 'lucide-react';
+import {
+  Banknote,
+  BookOpen,
+  Briefcase,
+  ChartNoAxesCombined,
+  Clock,
+  Earth,
+  Facebook,
+  HandCoins,
+  Instagram,
+  MoveRight,
+  Search,
+  Shield,
+  ShieldCheck,
+  TrendingUp,
+  Trophy,
+  Twitter,
+  Users
+} from 'lucide-react';
 
-export const NAVIGATION = [
+export const LINKS = [
   {
     label: 'Services',
     href: '#services',
@@ -13,7 +31,7 @@ export const NAVIGATION = [
   },
   {
     label: 'Industry Expertise',
-    href: '#',
+    href: '#industry-expertise',
     submenu: [
       { label: 'E-Commerce & Retail', href: '#' },
       { label: 'Entertainment', href: '#' },
@@ -156,4 +174,110 @@ export const ABOUT_US_CONTENT = [
   'We take pride in helping entrepreneurs and small businesses navigate financial complexities with confidence. Our firm is committed to providing personalized financial solutions tailored to your needs. From bookkeeping and payroll to audit defense and tax planning, we empower our clients with strategies that optimize financial performance, ensure compliance, and minimize tax liability.',
   'With a track record of serving over 300 clients nationwide and securing over $5 million in tax credits and strategies, we are dedicated to driving financial success for businesses and individuals alike.',
   'Let us handle the numbers so you can focus on what matters most, growing your business with confidence.'
+];
+
+export const REASONS = [
+  {
+    title: 'Efficiency',
+    description: 'Save time and resources by allowing our professionals to serve your needs.',
+    icon: Clock
+  },
+  {
+    title: 'Confidence',
+    description: 'Gain confidence in your financial reports knowing they are reviewed and prepared by professionals.',
+    icon: ShieldCheck
+  },
+  {
+    title: 'Trust',
+    description: 'Access to a trusted source to consult with on your organization.',
+    icon: Users
+  },
+  {
+    title: 'Growth',
+    description: 'Reach new potential knowing you have the full support of our professionals.',
+    icon: TrendingUp
+  },
+  {
+    title: 'Compliance',
+    description: 'Ensure compliance with local and federal agencies to avoid penalties.',
+    icon: ShieldCheck
+  },
+  {
+    title: 'Knowledge',
+    description: 'Boost your understanding of accounting and finance to assist in your business decisions.',
+    icon: BookOpen
+  }
+];
+
+export const PRICING_PLANS = [
+  {
+    id: 1,
+    title: 'Essential',
+    price: '$750/month',
+    features: [
+      {
+        id: 1,
+        title: 'Perfect for Simple Financial Structures'
+      },
+      {
+        id: 2,
+        title: 'Industry-Best Software'
+      },
+      {
+        id: 3,
+        title: 'Financial Reports Anytime'
+      }
+    ],
+    buttonText: 'Get started',
+    buttonIcon: MoveRight
+  },
+  {
+    id: 2,
+    title: 'Growth',
+    price: '$1250/month',
+    features: [
+      {
+        title: 'For Established Companies',
+        id: 1
+      },
+      {
+        title: 'Accrual Accounting',
+        id: 2
+      },
+      {
+        title: 'Scalable with Quickbooks or NetSuite',
+        id: 3
+      }
+    ],
+    buttonText: 'Get started',
+    buttonIcon: MoveRight,
+    isHighlighted: true
+  },
+  {
+    id: 3,
+    title: 'Executive',
+    price: 'Custom',
+    features: [
+      {
+        title: 'For Established Companies',
+        id: 1
+      },
+      {
+        title: 'Accrual Accounting',
+        id: 2
+      },
+      {
+        title: 'Scalable with Quickbooks or NetSuite',
+        id: 3
+      }
+    ],
+    buttonText: 'Get started',
+    buttonIcon: MoveRight
+  }
+];
+
+export const SOCIALS = [
+  { id: 1, href: '#', icon: Instagram },
+  { id: 2, href: '#', icon: Facebook },
+  { id: 3, href: '#', icon: Twitter }
 ];
