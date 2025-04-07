@@ -1,16 +1,16 @@
 "use client";
 
-import { NAVIGATION } from "@/constants";
+import { LINKS } from "@/constants";
 import useSticky from "@/hooks/use-sticky";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Menu } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useState } from "react";
+import Avatar from "./avatar";
 import { HoverButton } from "./button/hover-button";
 import MobileSidebarNav from "./mobile-sidebar-nav";
 
-export default function Header() {
+export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const isSticky = useSticky();
 
@@ -38,19 +38,13 @@ export default function Header() {
               <nav className="py-0 flex justify-between items-center flex-wrap relative md:pt-0 lg:flex lg:flex-row lg:justify-start">
                 <div className="transition-all duration-500 relative mr-10">
                   <Link className="flex items-center justify-between" href="/">
-                    <Image
-                      height={20}
-                      width={60}
-                      priority
-                      src="/logo/logo.png"
-                      alt="Sur consulting logo"
-                    />
+                    <Avatar />
                   </Link>
                 </div>
                 <div className="flex-1 items-center hidden lg:flex lg:basis-auto">
                   <nav>
                     <ul className="site-menu-main px-0 lg:flex lg:items-center lg:mb-0 lg:pl-0">
-                      {NAVIGATION?.map((item, i) => (
+                      {LINKS.map((item, i) => (
                         <li
                           key={i}
                           className="font-normal list-none group/submenu relative py-8 px-4"

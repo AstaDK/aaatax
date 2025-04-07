@@ -1,8 +1,8 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { motion, Variant } from 'framer-motion';
-import React from 'react';
-type Direction = 'up' | 'down' | 'left' | 'right';
+"use client";
+import { cn } from "@/lib/utils";
+import { motion, Variant } from "framer-motion";
+import React from "react";
+type Direction = "up" | "down" | "left" | "right";
 
 const containerVariants = {
   hidden: {},
@@ -12,9 +12,22 @@ const containerVariants = {
     },
   },
 };
-const generateVariants = (direction: Direction): { hidden: Variant; visible: Variant } => {
-  const axis = direction === 'left' || direction === 'right' ? 'x' : 'y';
-  const value = direction === 'right' || direction === 'down' ? 100 : -100;
+
+const variants = {
+  hidden: { filter: "blur(10px)", opacity: 0, y: 20 },
+  visible: {
+    filter: "blur(0px)",
+    opacity: 1,
+    y: 0,
+    transition: { ease: "linear" },
+  },
+};
+
+const generateVariants = (
+  direction: Direction
+): { hidden: Variant; visible: Variant } => {
+  const axis = direction === "left" || direction === "right" ? "x" : "y";
+  const value = direction === "right" || direction === "down" ? 100 : -100;
 
   return {
     hidden: { filter: "blur(10px)", opacity: 0, [axis]: value },
@@ -30,14 +43,13 @@ const generateVariants = (direction: Direction): { hidden: Variant; visible: Var
   } as { hidden: Variant; visible: Variant };
 };
 
-const defaultViewport = { amount: 0.3, margin: '0px 0px 0px 0px' };
+const defaultViewport = { amount: 0.3, margin: "0px 0px 0px 0px" };
 
 const TextScrollAnimation = ({
   text,
-  wrapperClass = '',
+  wrapperClass = "",
   viewport = defaultViewport,
-  variants,
-  direction = 'down',
+  direction = "down",
   letterAnime = false,
   lineAnime = false,
 }: {
@@ -48,10 +60,6 @@ const TextScrollAnimation = ({
     amount?: number;
     margin?: string;
     once?: boolean;
-  };
-  variants?: {
-    hidden?: any;
-    visible?: any;
   };
   direction?: Direction;
   letterAnime?: boolean;
@@ -80,7 +88,11 @@ const TextScrollAnimation = ({
           >
             {letterAnime ? (
               word.split("").map((letter, letterIndex) => (
-                <motion.span key={letterIndex} className="inline-block" variants={baseVariants}>
+                <motion.span
+                  key={letterIndex}
+                  className="inline-block"
+                  variants={baseVariants}
+                >
                   {letter}
                 </motion.span>
               ))
