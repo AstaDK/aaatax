@@ -50,7 +50,7 @@ export default function Achievement() {
         </AnimatedBeam>
       </div>
       <div className="pt-12 md:pt-16 max-w-3xl mx-auto text-center relative">
-        <p className="text-4xl md:text-5xl font-black text-slate-800 leading-tight tracking-wide italic">
+        <p className="text-4xl lg:text-5xl font-black text-slate-800 leading-tight tracking-wide italic">
           “The most expensive tax we pay is the tax of ignorance”
         </p>
         <p className="mt-4 text-xl text-slate-700 font-medium">— Probably an Accountant</p>
