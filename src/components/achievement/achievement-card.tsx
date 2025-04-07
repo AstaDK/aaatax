@@ -2,6 +2,7 @@ import Counter from '@/components/achievement/counter';
 import { AnimatedComponent } from '@/components/animated-image';
 import { cn } from '@/lib/utils';
 import { LucideIcon } from 'lucide-react';
+import React from 'react';
 
 export default function AchievementCard({
   data,
@@ -15,9 +16,13 @@ export default function AchievementCard({
   };
   index: number;
 }) {
-  const isLineOnMobile = index === 0 || index === 2;
-
-  const isLineOnDesktop = index < 3;
+  const { isLineOnMobile, isLineOnDesktop } = React.useMemo(
+    () => ({
+      isLineOnMobile: index === 0 || index === 2,
+      isLineOnDesktop: index < 3
+    }),
+    [index]
+  );
 
   return (
     <div

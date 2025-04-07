@@ -10,14 +10,14 @@ export default function Pricing() {
       id="pricing"
       className="py-10 md:py-16"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
         <div className="pb-12 text-center">
           <TextScrollAnimation
             wrapperClass="font-semibold text-3xl md:text-5xl text-black"
             text="Prices that make sense !"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {PRICING_PLANS.map((plan) => (
             <Card
               key={plan.id}
@@ -30,7 +30,7 @@ export default function Pricing() {
                 <CardTitle className="text-xl font-semibold">Starting at</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-col gap-8">
-                <div className="flex items-center justify-between text-3xl font-bold">
+                <div className="flex items-center justify-between md:text-3xl font-bold">
                   <span>{plan.price}</span>
                   <span>|</span>
                   <span>{plan.title}</span>

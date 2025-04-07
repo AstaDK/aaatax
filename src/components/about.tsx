@@ -21,11 +21,11 @@ export default function About() {
                   loading="lazy"
                   src="/hero/discuss.webp"
                   alt="discuss"
-                  sizes="(max-width: 960px) 100vw, 960px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
                   className="w-full h-auto transition-transform duration-300 hover:scale-105"
                 />
               </AnimatedComponent>
-              <div className="hidden sm:block absolute -bottom-[75px] -right-[34px] w-2/5 md:w-4/6 md:-bottom-[100px] md:-right-[120px]">
+              <div className="hidden sm:block absolute -bottom-[75px] -right-[34px] w-2/5 lg:w-4/6 lg:-bottom-[100px] lg:-right-[120px]">
                 <AnimatedComponent>
                   <Image
                     height={640}
@@ -33,12 +33,12 @@ export default function About() {
                     loading="lazy"
                     src="/hero/members.webp"
                     alt="members"
-                    sizes="(max-width: 720px) 100vw, 720px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
                     className="w-full h-auto transition-transform duration-300 hover:scale-105"
                   />
                 </AnimatedComponent>
               </div>
-              <div className="hidden md:block absolute top-[70px] -right-[82px] -z-10">
+              <div className="hidden lg:block absolute top-[70px] -right-[82px] -z-10">
                 <AnimatedComponent>
                   <Image
                     height={200}
@@ -50,7 +50,7 @@ export default function About() {
                   />
                 </AnimatedComponent>
               </div>
-              <div className="hidden md:block absolute -bottom-[92px] left-[200px] -z-10">
+              <div className="hidden lg:block absolute -bottom-[92px] left-[200px] -z-10">
                 <AnimatedComponent>
                   <Image
                     height={107}
@@ -65,8 +65,8 @@ export default function About() {
             </div>
           </div>
 
-          <div className="w-full px-3 flex items-end md:w-1/2">
-            <div className="md:ml-10">
+          <div className="w-full px-3 lg:w-1/2 mt-8 lg:mt-0">
+            <div className="lg:ml-10">
               <TextScrollAnimation
                 wrapperClass="text-3xl xl:text-4xl font-semibold text-slate-800 mb-5 leading-tight tracking-tight"
                 text="Committed to Your Financial Success"
