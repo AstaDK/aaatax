@@ -11,9 +11,9 @@ export default function Pricing() {
       className="py-10 md:py-16"
     >
       <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
-        <div className="pb-12 text-center">
+        <div className="pb-10 md:pb-16 max-w-2xl mx-auto text-center">
           <TextScrollAnimation
-            wrapperClass="font-semibold text-3xl md:text-5xl text-black"
+            wrapperClass="lg:text-nowrap font-semibold text-4xl sm:text-6xl leading-[1.15em] tracking-tight text-black"
             text="Prices that make sense !"
           />
         </div>

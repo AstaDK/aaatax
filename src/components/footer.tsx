@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="relative w-full">
-      <div className="mx-auto w-full max-w-7xl px-8 py-6">
+      <div className="mx-auto w-full max-w-7xl px-5 py-6">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <Avatar />

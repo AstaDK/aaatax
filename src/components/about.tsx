@@ -8,12 +8,12 @@ export default function About() {
   return (
     <div
       id="about"
-      className="py-10 md:py-16"
+      className="py-10 lg:py-16"
     >
       <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
         <div className="flex flex-wrap -mx-3">
-          <div className="w-full px-3 md:w-1/2">
-            <div className="relative mb-10 sm:mb-[115px] md:mb-0 md:mr-[115px]">
+          <div className="w-full px-3 lg:w-1/2">
+            <div className="relative mb-10 lg:mb-[115px] lg:mr-[115px]">
               <AnimatedComponent>
                 <Image
                   height={940}
@@ -21,11 +21,11 @@ export default function About() {
                   loading="lazy"
                   src="/hero/discuss.webp"
                   alt="discuss"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
+                  sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 480px"
                   className="w-full h-auto transition-transform duration-300 hover:scale-105"
                 />
               </AnimatedComponent>
-              <div className="hidden sm:block absolute -bottom-[75px] -right-[34px] w-2/5 lg:w-4/6 lg:-bottom-[100px] lg:-right-[120px]">
+              <div className="hidden lg:block absolute -bottom-[75px] -right-[34px] w-2/5 xl:w-4/6 xl:-bottom-[100px] xl:-right-[120px]">
                 <AnimatedComponent>
                   <Image
                     height={640}
@@ -33,7 +33,7 @@ export default function About() {
                     loading="lazy"
                     src="/hero/members.webp"
                     alt="members"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
+                    sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 50vw, 480px"
                     className="w-full h-auto transition-transform duration-300 hover:scale-105"
                   />
                 </AnimatedComponent>
@@ -87,7 +87,7 @@ export default function About() {
                   {paragraph}
                 </p>
               ))}
-              <div className="mt-8 sm:mt-10">
+              <div className="mt-8 lg:mt-10">
                 <HoverButton
                   customClass="border-blue-600 text-white"
                   bgAnimation="bg-blue-600"
