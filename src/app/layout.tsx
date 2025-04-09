@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scroll-smooth"
+      className="scroll-smooth antialiased"
     >
       <body className={`${inter.className}`}>
         <Navbar />

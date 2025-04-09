@@ -4,8 +4,8 @@ import BottomToTop from '@/components/bottom-to-top';
 import Hero from '@/components/hero';
 import LogoComponent from '@/components/logo';
 import Pricing from '@/components/pricing';
-import Reason from '@/components/reason';
 import Service from '@/components/service';
+import Solution from '@/components/solution';
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Service />
       <Achievement />
       <About />
-      <Reason />
+      <Solution />
       <Pricing />
     </>
   );
