@@ -1,11 +1,11 @@
-import { REASONS } from '@/constants';
+import { SOLUTIONS } from '@/constants';
 import { cn } from '@/lib/utils';
 import TextScrollAnimation from './text-animation/text-scroll-animation';
 
-export default function Reason() {
+export default function Solution() {
   return (
     <div
-      id="reasons"
+      id="solutions"
       className="py-10 md:py-16"
     >
       <div className="max-w-full md:max-w-2xl lg:max-w-7xl mx-auto px-5">
@@ -16,7 +16,7 @@ export default function Reason() {
           />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 relative">
-          {REASONS.map((feature, index) => (
+          {SOLUTIONS.map((feature, index) => (
             <div
               key={feature.title}
               className={cn(

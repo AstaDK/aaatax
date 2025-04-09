@@ -3,6 +3,7 @@ import { PRICING_PLANS } from '@/constants';
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
 import TextScrollAnimation from './text-animation/text-scroll-animation';
+import { Button } from './button/button';
 
 export default function Pricing() {
   return (
@@ -48,9 +49,9 @@ export default function Pricing() {
                     </div>
                   ))}
                 </div>
-                <button
+                <Button
                   className={cn(
-                    'w-full flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105 cursor-pointer',
+                    'w-full flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-all duration-300 hover:scale-105',
                     {
                       'bg-white text-navy': plan.isHighlighted,
                       'bg-navy text-white': !plan.isHighlighted
@@ -58,7 +59,7 @@ export default function Pricing() {
                   )}
                 >
                   {plan.buttonText} <plan.buttonIcon className="w-4 h-4" />
-                </button>
+                </Button>
               </CardContent>
             </Card>
           ))}
