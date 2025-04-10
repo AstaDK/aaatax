@@ -21,17 +21,17 @@ import {
 export const LINKS = [
   {
     label: 'Services',
-    href: '#services',
+    href: '/#services',
     submenu: []
   },
   {
-    label: 'About Us',
-    href: '#about',
+    label: 'About',
+    href: '/#about',
     submenu: []
   },
   {
     label: 'Industry Expertise',
-    href: '#industry-expertise',
+    href: '/#industry-expertise',
     submenu: [
       { label: 'E-Commerce & Retail', href: '#' },
       { label: 'Entertainment', href: '#' },
@@ -53,12 +53,17 @@ export const LINKS = [
   },
   {
     label: 'Solutions',
-    href: '#solutions',
+    href: '/#solutions',
     submenu: []
   },
   {
     label: 'Pricing',
-    href: '#pricing',
+    href: '/#pricing',
+    submenu: []
+  },
+  {
+    label: 'Blog',
+    href: '/blog',
     submenu: []
   }
 ];
