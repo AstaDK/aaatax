@@ -31,12 +31,12 @@ export default function Hero() {
                 Take control of your business success with expert tax and financial consulting solutions.
               </p>
               <div className="flex justify-center lg:justify-start gap-4">
-                <BorderMovingButton href="/about">Schedule a Free Consultation</BorderMovingButton>
+                <BorderMovingButton href="#about">Schedule a Free Consultation</BorderMovingButton>
                 <HoverButton
                   customClass="border-white"
                   bgAnimation="bg-white"
                   textColor="text-white"
-                  href="/about"
+                  href="#about"
                 >
                   Services
                 </HoverButton>

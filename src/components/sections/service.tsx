@@ -1,5 +1,7 @@
-import { SERVICES } from '@/constants';
 import TextScrollAnimation from '@/components/animations/text-scroll-animation';
+import { SERVICES } from '@/constants';
+import { GlowingEffect } from '../animations/glowing-effect';
+import { Card, CardContent, CardHeader } from '../ui/card';
 
 export default function Service() {
   return (
@@ -14,20 +16,32 @@ export default function Service() {
             text="What we do ?"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {SERVICES.map((item, i) => (
-            <div
+            <Card
               key={i}
-              className="border-2 border-gray-800 rounded-3xl bg-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              className="relative border border-gray-300 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
             >
-              <div className="flex items-center gap-4 p-6 border-b-2 border-gray-800 rounded-t-3xl bg-gray-50">
-                <item.icon size={32} />
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+              />
+              <CardHeader className="flex flex-col gap-4">
+                <span className="w-fit rounded-lg border border-gray-600 p-2">
+                  <item.icon
+                    className="transition-all duration-300 group-hover:translate-y-0.5"
+                    size={32}
+                  />
+                </span>
                 <p className="text-slate-800 font-semibold text-xl lg:text-3xl tracking-tight">{item.title}</p>
-              </div>
-              <div className="px-6 py-8">
+              </CardHeader>
+              <CardContent>
                 <p className="text-slate-700 text-lg lg:text-xl leading-relaxed">{item.description}</p>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

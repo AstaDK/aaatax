@@ -120,7 +120,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
         </nav>
         <div className="p-4 border-t border-gray-200">
           <Link
-            href="/portal-login"
+            href="#portal-login"
             className="w-full inline-flex items-center justify-center px-4 py-3 mb-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:scale-110 hover:shadow-md transition-all duration-300 ease-in-out"
             onClick={onClose}
           >
@@ -130,7 +130,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
             customClass="w-full border-blue-600 text-white hover:scale-110 hover:shadow-md transition-all duration-300 ease-in-out"
             bgAnimation="bg-blue-600"
             textColor="text-blue-600"
-            href="/about"
+            href="#about"
           >
             Talk to an Expert
           </HoverButton>
