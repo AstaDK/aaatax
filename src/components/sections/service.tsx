@@ -36,7 +36,7 @@ export default function Service() {
                     size={32}
                   />
                 </span>
-                <h3 className="text-slate-800 font-semibold text-xl lg:text-3xl tracking-tight">{item.title}</h3>
+                <p className="text-slate-800 font-semibold text-xl lg:text-3xl tracking-tight">{item.title}</p>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-700 text-lg lg:text-xl leading-relaxed">{item.description}</p>

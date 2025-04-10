@@ -87,7 +87,7 @@ export default function Navbar() {
                 </div>
                 <div className="hidden xl:flex items-center gap-4 xl:gap-6">
                   <Link
-                    href="/portal-login"
+                    href="#portal-login"
                     className="inline-flex items-center justify-center px-6 py-4.5 text-sm font-medium bg-white border-2 rounded-md hover:scale-105 transition-transform duration-300"
                   >
                     Portal Login
@@ -96,7 +96,7 @@ export default function Navbar() {
                     customClass="border-blue-600 text-white"
                     bgAnimation="bg-blue-600"
                     textColor="text-blue-600"
-                    href="/about"
+                    href="#about"
                   >
                     Talk to an Expert
                   </HoverButton>
