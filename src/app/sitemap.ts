@@ -5,6 +5,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     {
       url: 'https://www.aaataxconsulting.com/',
       lastModified: new Date()
+    },
+    {
+      url: 'https://www.aaataxconsulting.com/blog',
+      lastModified: new Date()
     }
   ];
 }

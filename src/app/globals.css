@@ -2,7 +2,7 @@
 
 @theme {
   --color-navy: #040d43;
-
+  --color-navy-hover: #1a2678;
   /* Border Radius */
   --achievement-radius: 0px 25px 0px 25px;
 }

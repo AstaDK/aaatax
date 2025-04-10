@@ -1,8 +1,9 @@
+import Footer from '@/components/layout/footer';
+import Navbar from '@/components/layout/navbar';
+import BottomToTop from '@/components/ui/bottom-to-top';
 import { inter } from '@/lib/fonts';
 import type { Metadata } from 'next';
 import './globals.css';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -45,6 +46,7 @@ export default function RootLayout({
       className="scroll-smooth antialiased"
     >
       <body className={`${inter.className}`}>
+        <BottomToTop />
         <Navbar />
         {children}
         <Footer />
