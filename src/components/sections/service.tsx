@@ -16,11 +16,11 @@ export default function Service() {
             text="What we do ?"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {SERVICES.map((item, i) => (
             <Card
               key={i}
-              className="relative border border-gray-100 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
+              className="relative border border-gray-300 rounded-3xl shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
             >
               <GlowingEffect
                 spread={40}
