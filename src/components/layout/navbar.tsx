@@ -93,9 +93,9 @@ export default function Navbar() {
                     Portal Login
                   </Link>
                   <HoverButton
-                    customClass="border-blue-600 text-white"
-                    bgAnimation="bg-blue-600"
-                    textColor="text-blue-600"
+                    customClass="border-navy text-white"
+                    bgAnimation="bg-navy"
+                    textColor="text-navy"
                     href="#about"
                   >
                     Talk to an Expert

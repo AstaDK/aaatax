@@ -53,7 +53,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
           </h5>
           <button
             type="button"
-            className="text-gray-500 hover:text-gray-700 transition-colors duration-200"
+            className="text-navy"
             onClick={onClose}
             aria-label="Close"
           >
@@ -68,7 +68,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
                   <>
                     <span
                       onClick={() => toggleSubmenu(i)}
-                      className="w-full flex justify-between items-center px-4 py-3 text-left text-gray-800 font-semibold hover:bg-gray-100 hover:scale-105 rounded-lg transition-all duration-300 ease-in-out"
+                      className="w-full flex justify-between items-center px-4 py-3 text-left text-navy font-semibold rounded-lg"
                     >
                       <Link
                         href={item.href}
@@ -81,7 +81,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
                       </Link>
                       <ChevronDown
                         className={cn(
-                          'h-4 w-4 text-gray-500 transition-transform duration-300',
+                          'h-4 w-4 text-navy transition-transform duration-300',
                           openSubmenu === i ? 'rotate-180' : 'rotate-0'
                         )}
                       />
@@ -96,7 +96,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
                         <li key={i2}>
                           <Link
                             href={item2.href}
-                            className="block px-4 py-2 text-gray-600 hover:bg-gray-50 hover:text-gray-800 hover:scale-105 rounded-lg transition-all duration-200 ease-in-out"
+                            className="block px-4 py-2 text-navy rounded-lg"
                             onClick={onClose}
                           >
                             {item2.label}
@@ -108,7 +108,7 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
                 ) : (
                   <Link
                     href={item.href}
-                    className="block px-4 py-3 text-gray-800 font-semibold hover:bg-gray-100 hover:scale-105 rounded-lg transition-all duration-300 ease-in-out"
+                    className="block px-4 py-3 text-navy font-semibold"
                     onClick={onClose}
                   >
                     {item.label}
@@ -121,15 +121,15 @@ export default function MobileSidebarNav({ isOpen, onClose }: { isOpen: boolean;
         <div className="p-4 border-t border-gray-200">
           <Link
             href="#portal-login"
-            className="w-full inline-flex items-center justify-center px-4 py-3 mb-3 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 hover:scale-110 hover:shadow-md transition-all duration-300 ease-in-out"
+            className="w-full inline-flex items-center justify-center px-4 py-3 mb-3 text-md font-semibold text-navy border-2 border-navy rounded-lg"
             onClick={onClose}
           >
             Portal Login
           </Link>
           <HoverButton
-            customClass="w-full border-blue-600 text-white hover:scale-110 hover:shadow-md transition-all duration-300 ease-in-out"
-            bgAnimation="bg-blue-600"
-            textColor="text-blue-600"
+            customClass="w-full border-navy text-white"
+            bgAnimation="bg-navy"
+            textColor="text-navy"
             href="#about"
           >
             Talk to an Expert

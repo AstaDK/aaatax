@@ -15,7 +15,7 @@ export const HoverButton = ({ children, customClass, textColor, bgAnimation, hre
     <Link
       href={href}
       className={cn(
-        'relative inline-flex items-center justify-center px-[24px] py-[18px] overflow-hidden font-semibold text-[16px] leading-[1]',
+        'relative inline-flex items-center justify-center px-[24px] py-[18px] overflow-hidden font-semibold text-md leading-[1]',
         customClass,
         'transition duration-300 ease-out border-2 rounded-md shadow-md group h-14'
       )}
