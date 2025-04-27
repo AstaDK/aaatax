@@ -20,6 +20,12 @@ export default function Footer() {
                 {label}
               </Link>
             ))}
+            <Link
+              href="/tac"
+              className="text-sm font-bold text-slate-800 hover:text-slate-600"
+            >
+              Terms and Conditions
+            </Link>
           </div>
         </div>
         <div className="mt-6 flex flex-col items-center justify-center border-t border-slate-700 pt-4 md:flex-row md:justify-between">

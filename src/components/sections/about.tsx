@@ -1,8 +1,8 @@
-import { ABOUT_US_CONTENT } from '@/constants';
-import Image from 'next/image';
 import { AnimatedComponent } from '@/components/animations/animated-image';
 import { HoverButton } from '@/components/animations/hover-button';
 import TextScrollAnimation from '@/components/animations/text-scroll-animation';
+import { ABOUT_US_CONTENT } from '@/constants';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -73,11 +73,9 @@ export default function About() {
               />
               <h2 className="mb-5 text-xl font-semibold text-slate-800 leading-8 tracking-tight">
                 With over a decade of experience, AAA Business and Tax Consulting has built a strong reputation for
-                delivering expert tax, accounting, and business advisory services.{' '}
-                <span className="text-red-700">
-                  Our team brings extensive experience working with Fortune 500 companies and has earned the prestigious
-                  Enrolled Agent (EA) certification, demonstrating our deep expertise in taxation.
-                </span>
+                delivering expert tax, accounting, and business advisory services. Our team brings extensive experience
+                working with Fortune 500 companies and has earned the prestigious Enrolled Agent (EA) certification,
+                demonstrating our deep expertise in taxation.
               </h2>
               {ABOUT_US_CONTENT.map((paragraph, index) => (
                 <p
@@ -89,9 +87,9 @@ export default function About() {
               ))}
               <div className="mt-8 lg:mt-10">
                 <HoverButton
-                  customClass="border-blue-600 text-white"
-                  bgAnimation="bg-blue-600"
-                  textColor="text-blue-600"
+                  customClass="border-navy text-white"
+                  bgAnimation="bg-navy"
+                  textColor="text-navy"
                   href="#about"
                 >
                   More About Us

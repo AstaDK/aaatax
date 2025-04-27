@@ -25,7 +25,7 @@ export default function Hero() {
                 duration={1}
                 filter={false}
                 words="We Handle Your Finances, So You Can Focus on Growth."
-                className="text-3xl lg:text-5xl font-bold text-white mb-4"
+                className="text-3xl lg:text-5xl font-bold"
               />
               <p className="text-white text-lg leading-relaxed mb-6">
                 Take control of your business success with expert tax and financial consulting solutions.
